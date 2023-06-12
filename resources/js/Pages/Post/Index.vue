@@ -14,7 +14,7 @@
 
         <div class="card border-0 rounded shadow-sm">
             <div class="card-body">
-                <table class="table">
+                <table id="tabel-data" class="table table-striped table-bordered" cellspacing="0" width="150%">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
@@ -23,7 +23,7 @@
                             <th scope="col">ACTIONS</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="height: 100px; overflow: scroll;">
                         <tr v-for="post,index in posts" :key="post.id">
                             <td>{{ ++index }}</td>
                             <td>{{ post.title }}</td>
@@ -31,10 +31,6 @@
                             <td>
                                 <Link :href="`/posts/${post.id}/edit`" class="btn btn-sm btn-primary me-2"><i class="fa fa-pencil"></i></Link>
                                 <button @click.prevent="deletePost(`${post.id}`)" class="btn btn-sm btn-danger" onclick="return confirm('Ok');"><i class="fa fa-trash"></i></button>
-                                 <!-- <button @click="showModal(post.id)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
-                                  <!-- Launch demo modal -->
-                                <!-- </button> -->
-                                <!-- <Spinner name="cube-grid" color="#e9ffaa"/> -->
                             </td>
                         </tr>
                     </tbody>

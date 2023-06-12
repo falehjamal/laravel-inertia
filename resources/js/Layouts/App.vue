@@ -12,10 +12,10 @@
               <Link class="nav-link text-dark" href="/posts/">POSTS</Link>
             </li>
           </ul>
-          <form class="d-flex">
+          <!-- <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-success" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>

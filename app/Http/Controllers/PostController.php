@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {   
 
-        $posts = Post::all();
+        $posts = Post::all()->take(20);
 
         return Inertia::render('Post/Index', [
             'posts' => $posts
@@ -49,10 +49,12 @@ class PostController extends Controller
         ]);
 
         //create post
+        // for ($i=0; $i < 10; $i++) { 
         $post = Post::create([
             'title'     => $request->title,
             'content'   => $request->content
         ]);
+    // }
 
         if($post) {
             return Redirect::route('posts.index')->with('message', 'Data Berhasil Disimpan!');
